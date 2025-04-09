@@ -2,4 +2,16 @@
   <p class="m-0">
       Bienvenue sur {{ appTitle }} !
   </p>
+  <div class="flex flex-row justify-content-center gap-3">
+    <button pButton 
+            label="Se connecter" 
+            icon="pi pi-sign-in" 
+            class="p-button-primary" 
+            (click)="navigateToLogin()"></button>   
+    <button pButton 
+            label="Créer un compte" 
+            icon="pi pi-user-plus" 
+            class="p-button-secondary" 
+            (click)="navigateToRegister()"></button>
+  </div>
 </p-card>

@@ -1,0 +1,85 @@
+<!-- auth.component.html -->
+<div class="flex justify-content-center align-items-center min-h-screen">
+  <!-- Login Card (shown when isLoginMode is true) -->
+  <p-card *ngIf="isLoginMode" header="Connexion" class="block m-2" Style="width: 400px;">
+    <form (ngSubmit)="onSubmit()" [formGroup]="authForm" class="flex flex-column gap-3">
+      <div class="p-field">
+        <label for="username">Nom d'utilisateur</label>
+        <input pInputText id="username" formControlName="username" />
+        <small *ngIf="authForm.get('username')?.invalid && authForm.get('username')?.touched" 
+               class="p-error">
+          Nom d'utilisateur requis (min. 3 caractères)
+        </small>
+      </div>
+
+      <div class="p-field">
+        <label for="password">Mot de passe</label>
+        <input pInputText id="password" formControlName="password" type="password" />
+        <small *ngIf="authForm.get('password')?.invalid && authForm.get('password')?.touched" 
+               class="p-error">
+          Mot de passe requis (min. 6 caractères)
+        </small>
+      </div>
+
+      <p-button label="Se connecter" 
+                type="submit" 
+                [disabled]="authForm.invalid || isLoading"
+                [loading]="isLoading"></p-button>
+
+      <div *ngIf="errorMessage" class="p-error p-text-center">
+        <i class="pi pi-exclamation-triangle"></i> {{ errorMessage }}
+      </div>
+    </form>
+  </p-card>
+
+  <!-- Register Card (shown when isLoginMode is false) -->
+  <p-card *ngIf="!isLoginMode" header="Créer un compte" class="block m-2" Style="width: 400px;">
+    <form (ngSubmit)="onSubmit()" [formGroup]="authForm" class="flex flex-column gap-3">
+      <div class="p-field">
+        <label for="username">Nom d'utilisateur</label>
+        <input pInputText id="username" formControlName="username" />
+        <small *ngIf="authForm.get('username')?.invalid && authForm.get('username')?.touched" 
+               class="p-error">
+          Nom d'utilisateur requis (min. 3 caractères)
+        </small>
+      </div>
+
+      <div class="p-field">
+        <label for="email">Email</label>
+        <input pInputText id="email" formControlName="email" type="email" />
+        <small *ngIf="authForm.get('email')?.invalid && authForm.get('email')?.touched" 
+               class="p-error">
+          Email valide requis
+        </small>
+      </div>
+
+      <div class="p-field">
+        <label for="password">Mot de passe</label>
+        <input pInputText id="password" formControlName="password" type="password" />
+        <small *ngIf="authForm.get('password')?.invalid && authForm.get('password')?.touched" 
+               class="p-error">
+          Mot de passe requis (min. 6 caractères)
+        </small>
+      </div>
+
+      <div class="p-field">
+        <label for="confirmPassword">Confirmer le mot de passe</label>
+        <input pInputText id="confirmPassword" formControlName="confirmPassword" type="password" />
+        <small *ngIf="authForm.get('confirmPassword')?.invalid && authForm.get('confirmPassword')?.touched" 
+               class="p-error">
+          Confirmation requise
+        </small>
+      </div>
+
+      <p-button label="Créer un compte" 
+                type="submit" 
+                [disabled]="authForm.invalid || isLoading"
+                [loading]="isLoading"></p-button>
+
+      <div *ngIf="errorMessage" class="p-error p-text-center">
+        <i class="pi pi-exclamation-triangle"></i> {{ errorMessage }}
+      </div>
+
+    </form>
+  </p-card>
+</div>
