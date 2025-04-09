@@ -1,0 +1,128 @@
+:host {
+    display: block;
+    height: 100%;
+    overflow: auto;
+}
+
+/* Style for the filter input */
+.filter-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+  }
+  
+.filter-container label {
+font-weight: bold;
+font-size: 14px;
+}
+  
+.filter-container input {
+padding: 8px;
+font-size: 14px;
+border: 1px solid #ccc;
+border-radius: 4px;
+width: 300px;
+}
+  
+/* Style for the product list cards */
+.p-card {
+width: 300px;
+margin: 10px;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+overflow: hidden;
+background-color: #fff;
+}
+  
+.p-card img {
+width: 100%;
+height: 200px;
+object-fit: cover;
+border-bottom: 1px solid #f0f0f0;
+}
+
+.p-card .text-lg {
+font-size: 18px;
+font-weight: 600;
+color: #333;
+margin: 10px 0;
+}
+
+.p-card .text-sm {
+font-size: 14px;
+color: #777;
+margin: 5px 0;
+}
+  
+.p-card .font-medium {
+font-weight: 500;
+}
+
+.p-card .text-secondary {
+color: #5b8dff;
+}
+
+.p-card-footer {
+padding: 10px 0;
+text-align: center;
+}
+
+/* Style for pagination controls */
+.ui-paginator {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+  
+.ui-paginator .ui-paginator-page {
+    background-color: #5b8dff;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.ui-paginator .ui-paginator-page:hover {
+    background-color: #3b6fcd;
+}
+
+.ui-paginator .ui-paginator-page.ui-state-disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+/* Ensure the cards are responsive and align well */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.product-list p-card {
+    flex: 1 1 300px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* Style the "Add to Cart", "Edit", and "Delete" buttons */
+.p-button {
+    width: 100%;
+    padding: 8px 12px;
+    margin-top: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    text-transform: capitalize;
+}
+
+/* Add some space around the product list container */
+.product-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}  
