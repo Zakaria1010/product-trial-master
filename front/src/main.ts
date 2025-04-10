@@ -14,6 +14,7 @@ import { ConfirmationService, MessageService } from "primeng/api";
 import { DialogService } from "primeng/dynamicdialog";
 import { AppComponent } from "./app/app.component";
 import { environment } from "./environments/environment";
+import { appConfig } from "app/app.config";
 
 if (environment.production) {
   enableProdMode();
@@ -30,6 +31,7 @@ bootstrapApplication(AppComponent, {
     ConfirmationService,
     MessageService,
     DialogService,
+    appConfig
   ],
 }).catch((err) => console.log(err));
 

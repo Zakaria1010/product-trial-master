@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "Id": 1,
+    "Username": "string",
+    "Email": "string",
+    "Password": "RzKH\u002BCmNunFjqJeQiVj3wOrnM\u002BJdLgJ5kuou3JvtL6g=",
+    "Cart": [
+      0
+    ],
+    "Wishlist": [
+      0
+    ]
+  },
+  {
+    "Id": 2,
+    "Username": "admin",
+    "Email": "admin@admin.com",
+    "Password": "NyaDNd1pMQRb3N\u002BSYj/4GaZCRLU9DnRtQ4eXNJ1NpXg=",
+    "Cart": [],
+    "Wishlist": []
+  },
+  {
+    "Id": 3,
+    "Username": "zakaria2",
+    "Email": "zakaria3@admin.com",
+    "Password": "NyaDNd1pMQRb3N\u002BSYj/4GaZCRLU9DnRtQ4eXNJ1NpXg=",
+    "Cart": [],
+    "Wishlist": []
+  },
+  {
+    "Id": 4,
+    "Username": "zakaria2",
+    "Email": "Zakaria3@admin.com",
+    "Password": "NyaDNd1pMQRb3N\u002BSYj/4GaZCRLU9DnRtQ4eXNJ1NpXg=",
+    "Cart": [],
+    "Wishlist": []
+  }
+]

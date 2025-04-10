@@ -17,7 +17,7 @@ namespace back.Controllers
             _configuration = configuration;
         }
 
-        [HttpPost]
+        [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] User user)
         {
             try

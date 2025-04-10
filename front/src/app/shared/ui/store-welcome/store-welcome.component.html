@@ -1,0 +1,12 @@
+<p-card header="Bon Shopping !" class="block m-2 text-center">
+        <p class="m-0">
+            Vous etes connecté sur {{ appTitle }} !
+        </p>
+        <div class="flex flex-row justify-content-center gap-3">
+            <button pButton 
+                label="Se déconnecter" 
+                icon="pi pi-user-plus" 
+                class="p-button-secondary" 
+                (click)="logout()"></button>
+        </div>
+</p-card>
