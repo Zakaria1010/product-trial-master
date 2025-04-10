@@ -55,9 +55,9 @@ namespace back.Models
             return await Task.FromResult(user);
         }
 
-        public async Task<User> Authenticate(string username, string password)
+        public async Task<User> Authenticate(string email, string password)
         {
-            var user = _users.FirstOrDefault(u => u.Username == username && u.Password == HashPassword(password));
+            var user = _users.FirstOrDefault(u => u.Email == email && u.Password == HashPassword(password));
             return await Task.FromResult(user);
         }
 

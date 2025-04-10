@@ -24,7 +24,7 @@ namespace back.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateToken([FromBody] AuthRequest authRequest)
         {
-            var user = await _authRepo.Authenticate(authRequest.Username, authRequest.Password);
+            var user = await _authRepo.Authenticate(authRequest.Email, authRequest.Password);
             if (user == null)
                 return Unauthorized();
 

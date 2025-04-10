@@ -17,6 +17,6 @@ export class StoreWelcomeComponent {
 
   logout() {
     localStorage.removeItem('token');
-    this.router.navigate(['/']);
+    this.router.navigate(['/auth']);
   }
 }

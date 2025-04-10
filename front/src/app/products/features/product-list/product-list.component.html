@@ -1,6 +1,6 @@
 <h1 class="text-center">Liste des produits</h1>
 
-<p-button label="Créer produit" (onClick)="onCreate()" class="block text-center"/>
+<p-button *ngIf="isAdmin" label="Créer produit" (onClick)="onCreate()" class="block text-center"/>
 <!-- Filtrage -->
 <!-- Filter input -->
 <div class="filter-container">
@@ -22,9 +22,9 @@
                     <div class="text-sm text-500 mt-2 text-center">{{ product.description }}</div>
                     <div class="text-lg font-medium text-900 mt-2 text-center">{{ product.price | currency }}</div>
                     <span class="font-medium text-secondary text-sm text-center block mt-2">{{ product.category }}</span>
-                    <ng-template pTemplate="footer">
+                    <ng-template *ngIf="isAdmin" pTemplate="footer">
                         <div class="flex gap-3 w-full h-auto">
-                            <p-button label="Add to Cart" severity="success" (onClick)="onAddToCart(product)" />
+                            <p-button  label="Add to Cart" severity="success" (onClick)="onAddToCart(product)" />
                             <p-button label="Edit" severity="secondary" (onClick)="onUpdate(product)"/>
                             <p-button label="Delete" severity="danger" (onClick)="onDelete(product)" />
                         </div>

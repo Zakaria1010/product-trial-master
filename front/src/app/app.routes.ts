@@ -25,9 +25,12 @@ export const APP_ROUTES: Routes = [
       import("./contact/contact.routes").then((m) => m.CONTACT_ROUTES),
     canActivate: [authGuard]
   },
-  { path: "", redirectTo: "home", pathMatch: "full" },
-  { 
-    path: 'auth', 
+  {
+    path: "",
+    redirectTo: "home",
+    pathMatch: "full"
+  }, {
+    path: 'auth',
     children: [
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'login', component: AuthComponent, data: { mode: 'login' } },

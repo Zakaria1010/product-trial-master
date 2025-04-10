@@ -29,8 +29,8 @@ export class AuthComponent implements OnInit {
     private authService: AuthService
   ) {
     this.authForm = this.fb.group({
-      username: ['', [Validators.required, Validators.minLength(3)]],
-      email: ['', [Validators.email]],
+      username: ['', [Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['']
     });
@@ -81,11 +81,11 @@ export class AuthComponent implements OnInit {
       });
     } else {
       // handle login here
-      this.authService.login({ username, password }).subscribe({
+      this.authService.login({ email, password }).subscribe({
         next: (response) => {
           localStorage.setItem('token', response.token);
           console.log('Login success', response);
-          this.router.navigate(['/welcome']); // or wherever you want to go
+          this.router.navigate(['/']); // or wherever you want to go
         },
         error: (err) => {
           console.error('Login failed:', err);

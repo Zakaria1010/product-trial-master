@@ -1,4 +1,4 @@
-<p-card header="Bienvenue" class="block m-2 text-center">
+<p-card *ngIf="!isAuthenticated" header="Bienvenue" class="block m-2 text-center">
   <p class="m-0">
       Bienvenue sur {{ appTitle }} !
   </p>
@@ -15,3 +15,9 @@
             (click)="navigateToRegister()"></button>
   </div>
 </p-card>
+
+<!-- Replace this with the component to display when authenticated -->
+<div *ngIf="isAuthenticated">
+  <!-- Example of a component to show when authenticated -->
+  <app-store-welcome></app-store-welcome>
+</div>

@@ -6,6 +6,7 @@ import { Product } from "app/products/data-access/product.model";
 import { ProductsService } from "app/products/data-access/products.service";
 import { ProductFormComponent } from "app/products/ui/product-form/product-form.component";
 import { AppShoppingCartComponent } from "app/shared/ui/app-shopping-cart/app-shopping-cart.component";
+import { jwtDecode } from "jwt-decode";
 import { ButtonModule } from "primeng/button";
 import { CardModule } from "primeng/card";
 import { DataViewModule } from 'primeng/dataview';
@@ -50,7 +51,7 @@ export class ProductListComponent implements OnInit {
   public isCreation = false;
   public cart: any[] = [];
   public readonly editedProduct = signal<Product>(emptyProduct);
-
+  isAdmin: boolean = false; // Default isAdmin is false
   products: Product[] = [];
   totalProducts: number = 0;
   page: number = 1;
@@ -58,7 +59,20 @@ export class ProductListComponent implements OnInit {
   filter: string = '';
 
   ngOnInit() {
+    this.decodeToken();
     this.loadProducts();
+  }
+
+  public decodeToken(): void {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      return;
+    }
+
+    const decodedToken: any = jwtDecode(token);
+    if (decodedToken.email === 'admin@admin.com') {
+      this.isAdmin = true; // Set isAdmin to true if the email matches
+    }
   }
 
   public loadProducts(): void {
@@ -120,3 +134,4 @@ export class ProductListComponent implements OnInit {
     this.isDialogVisible = false;
   }
 }
+
